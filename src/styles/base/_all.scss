@@ -1,4 +1,6 @@
-@import 'variables';
+@import "variables";
 
-@import 'reset';
-@import 'normalize';
+@import "mixins/all";
+
+@import "reset";
+@import "normalize";

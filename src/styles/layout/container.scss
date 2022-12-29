@@ -1,0 +1,23 @@
+// CONTAINERS
+@mixin container() {
+  width: $container; // Default container width
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+}
+
+@mixin container-fluid {
+  @include container;
+  width: auto;
+  max-width: $container;
+}
+
+.l-container {
+  @include container;
+}
+
+.l-container--fluid {
+  @include container-fluid;
+}
