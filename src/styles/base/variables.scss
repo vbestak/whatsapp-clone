@@ -18,3 +18,11 @@ $spacing-sm: 8px;
 $spacing-md: 16px;
 $spacing-lg: 24px;
 $spacing-xl: 32px;
+
+$spacings: (
+  "1": $spacing-xs,
+  "2": $spacing-sm,
+  "3": $spacing-md,
+  "4": $spacing-lg,
+  "5": $spacing-xl,
+);
