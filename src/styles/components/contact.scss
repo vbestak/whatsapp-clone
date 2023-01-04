@@ -1,0 +1,48 @@
+.c-contact {
+  $hover-bkg: #ebebeb;
+  $border-color: #ebebeb;
+
+  height: 72px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $border-color;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hover-bkg;
+  }
+
+  &__avatar {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+
+      object-fit: cover;
+    }
+  }
+
+  &__data {
+    width: 100%;
+    min-width: 0;
+
+    &_name {
+      font-size: 1rem;
+    }
+
+    &_time {
+      font-size: 0.75rem;
+      color: $font-tertiary;
+    }
+
+    &_message {
+      font-size: 0.85rem;
+      color: $font-secondary;
+    }
+  }
+}
