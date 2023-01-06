@@ -1,0 +1,44 @@
+.c-searchInput {
+  position: relative;
+  width: 100%;
+
+  &__searchIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    overflow: hidden;
+    z-index: 1;
+
+    // search icon size
+    width: 24px;
+    height: 24px;
+
+    color: #919191;
+  }
+
+  input {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 34px;
+    padding-left: 55px;
+
+    font-size: 0.825rem;
+
+    background: white;
+    color: #4a4a4aff;
+
+    border: none;
+    border-radius: 18px;
+
+    // TODO redo width mixin
+    &::placeholder {
+      color: rgb(153, 153, 153);
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.c-notification {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    line-height: 1.5;
+
+    &_title {
+      font-size: 1rem;
+      color: #343738;
+    }
+
+    &_info {
+      font-size: 0.85rem;
+      color: #414a4e;
+    }
+  }
+
+  &.is-info {
+    background-color: $info;
+    color: black;
+  }
+
+  // TODO change color of different notification types
+  &.is-warning {
+    background-color: $warning;
+    color: black;
+  }
+
+  &.is-success {
+    background-color: $success;
+    color: black;
+  }
+
+  &.is-danger {
+    background-color: $danger;
+    color: black;
+  }
+}

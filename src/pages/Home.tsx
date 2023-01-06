@@ -1,7 +1,13 @@
+import Sidebar from "../components/Sidebar";
+
 function Home() {
   return (
     <div className="p-home">
-      <div className="l-container--fluid"></div>
+      <div className="p-home__main l-container--fluid">
+        <Sidebar />
+
+        <div className="p-home__main_chat">TODO</div>
+      </div>
     </div>
   );
 }

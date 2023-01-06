@@ -43,7 +43,7 @@ function ContactCard({ seen, notSeen, pinned, newMessages }: ContactCardProps) {
       </div>
 
       <div className="c-contact__data">
-        <div className="u-flex u-h-between u-mb-1">
+        <div className="u-flex u-h-between">
           <div className="c-contact__name">Contact name</div>
           <div className="c-contact__time">09:15</div>
         </div>

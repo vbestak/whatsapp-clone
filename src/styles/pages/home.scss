@@ -22,9 +22,13 @@
     background: rgb(0, 150, 136);
   }
 
-  > .l-container--fluid {
+  &__main {
+    display: flex;
     height: 100vh;
-    @include random-bgr();
+    background-color: $bkg-secondary;
+
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 1px 0px,
+      rgba(0, 0, 0, 0.2) 0px 2px 5px 0px;
 
     @media (min-width: $break-lg) {
       height: calc(100vh - $spacing-md * 2);
@@ -32,6 +36,15 @@
 
     @media (min-width: $break-xl) {
       height: calc(100vh - $spacing-lg * 2);
+    }
+
+    .c-sidebar {
+      flex-basis: 30%;
+    }
+
+    // TODO to add
+    &_chat {
+      flex-basis: 70%;
     }
   }
 }
