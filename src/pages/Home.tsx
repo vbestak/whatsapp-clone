@@ -1,4 +1,5 @@
 import Sidebar from "../components/Sidebar";
+import MobileConnectionInfo from "../components/MobileConnectionInfo";
 
 function Home() {
   return (
@@ -6,7 +7,9 @@ function Home() {
       <div className="p-home__main l-container--fluid">
         <Sidebar />
 
-        <div className="p-home__main_chat">TODO</div>
+        <div className="p-home__main_chat">
+          <MobileConnectionInfo />
+        </div>
       </div>
     </div>
   );
