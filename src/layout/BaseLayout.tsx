@@ -1,13 +1,15 @@
 import Sidebar from "../components/Sidebar";
-import { PropsWithChildren } from "react";
+import { Outlet } from "react-router-dom";
 
-function BaseLayout({ children }: PropsWithChildren) {
+function BaseLayout() {
   return (
     <div className="l-base">
       <div className="l-base__container l-container--fluid">
         <Sidebar />
 
-        <div className="l-base__container_main">{children}</div>
+        <div className="l-base__container_main">
+          <Outlet />
+        </div>
       </div>
     </div>
   );
