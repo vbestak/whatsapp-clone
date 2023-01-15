@@ -1,0 +1,90 @@
+.s-userChat {
+  $header-height: 60px;
+  $footer-height: 60px;
+
+  width: 100%;
+  height: 100%;
+
+  &__header {
+    background: #edededff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $header-height;
+    padding: 10px;
+
+    &_avatar {
+      width: 40px;
+      height: 40px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+
+    &_userInfo {
+      flex: 1 1;
+      width: 50px;
+    }
+
+    &_actions {
+      margin-right: 20px;
+      display: flex;
+      align-items: center;
+
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 5px;
+        margin-left: 20px;
+      }
+    }
+
+    &_userName {
+      color: #000000;
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    &_userStatus {
+      color: #00000099;
+      font-size: 0.75rem;
+    }
+
+    &_avatar + &_userInfo {
+      margin-left: 10px;
+    }
+  }
+
+  &__body {
+    position: relative;
+    height: calc(100% - $header-height - $footer-height);
+    overflow-y: scroll;
+
+    background-color: #e4dcd4;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      opacity: 0.05;
+      background: url(../assets/imgs/bg-chat-light.png) repeat;
+    }
+  }
+
+  &__footer {
+    position: relative;
+    height: $footer-height;
+
+    display: flex;
+    align-items: center;
+
+    padding: 10px;
+    background: #f0f0f0ff;
+  }
+}

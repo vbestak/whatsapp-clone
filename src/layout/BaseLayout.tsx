@@ -7,9 +7,9 @@ function BaseLayout() {
       <div className="l-base__container l-container--fluid">
         <Sidebar />
 
-        <div className="l-base__container_main">
+        <main className="l-base__container_main">
           <Outlet />
-        </div>
+        </main>
       </div>
     </div>
   );

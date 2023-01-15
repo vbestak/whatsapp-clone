@@ -1,4 +1,4 @@
-import { ReactComponent as NotificationIcon } from "../../../assets/notification.svg";
+import { ReactComponent as NotificationIcon } from "../../../assets/icons/notification.svg";
 import SidebarNotification from "./SidebarNotification";
 
 function NewMessagesNotification() {

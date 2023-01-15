@@ -1,8 +1,8 @@
 import { getRandomImage } from "../util/img";
-import { ReactComponent as ArrowDownIcon } from "../assets/arrow-down.svg";
-import { ReactComponent as PinnedIcon } from "../assets/pinned.svg";
-import { ReactComponent as SeenIcon } from "../assets/seen.svg";
-import { ReactComponent as NotSeenIcon } from "../assets/notSeen.svg";
+import { ReactComponent as ArrowDownIcon } from "../assets/icons/arrow-down.svg";
+import { ReactComponent as PinnedIcon } from "../assets/icons/pinned.svg";
+import { ReactComponent as SeenIcon } from "../assets/icons/seen.svg";
+import { ReactComponent as NotSeenIcon } from "../assets/icons/notSeen.svg";
 
 interface ContactCardProps {
   seen?: boolean;

@@ -1,8 +1,8 @@
 import SearchInput from "./SearchInput";
 import { getRandomImage } from "../util/img";
-import { ReactComponent as StatusIcon } from "../assets/status.svg";
-import { ReactComponent as ElipsisIcon } from "../assets/elipsis.svg";
-import { ReactComponent as MessageIcon } from "../assets/message.svg";
+import { ReactComponent as StatusIcon } from "../assets/icons/status.svg";
+import { ReactComponent as ElipsisIcon } from "../assets/icons/elipsis.svg";
+import { ReactComponent as MessageIcon } from "../assets/icons/message.svg";
 import NewMessagesNotification from "./notification/sidebar/NewMessagesNotification";
 import ContactCard from "./ContactCard";
 

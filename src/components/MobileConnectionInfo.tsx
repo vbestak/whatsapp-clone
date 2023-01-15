@@ -1,4 +1,4 @@
-import MobileConnectionImg from "../assets/mobile-connection-light.jpg";
+import MobileConnectionImg from "../assets/icons/mobile-connection-light.jpg";
 
 function MobileConnectionInfo() {
   return (
