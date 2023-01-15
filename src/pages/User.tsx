@@ -1,6 +1,9 @@
 import { getRandomImage } from "../util/img";
 import { ReactComponent as ElipsisIcon } from "../assets/icons/elipsis.svg";
 import { ReactComponent as SearchIcon } from "../assets/icons/search.svg";
+import { ReactComponent as SmileyIcon } from "../assets/icons/smiley.svg";
+import { ReactComponent as AttachIcon } from "../assets/icons/attach.svg";
+import { ReactComponent as MicrophoneIcon } from "../assets/icons/microphone.svg";
 
 function User() {
   return (
@@ -32,7 +35,21 @@ function User() {
 
       <div className="s-userChat__body"></div>
 
-      <div className="s-userChat__footer"></div>
+      <div className="s-userChat__footer">
+        <button>
+          <SmileyIcon width={22} height={22} />
+        </button>
+
+        <button>
+          <AttachIcon width={22} height={22} />
+        </button>
+
+        <input className="e-input" placeholder="Type a message" />
+
+        <button>
+          <MicrophoneIcon width={22} height={22} />
+        </button>
+      </div>
     </div>
   );
 }
