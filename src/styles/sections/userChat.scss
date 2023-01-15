@@ -63,7 +63,6 @@
   &__body {
     position: relative;
     height: calc(100% - $header-height - $footer-height);
-    overflow-y: scroll;
 
     background-color: #e4dcd4;
 
@@ -71,9 +70,17 @@
       content: "";
       position: absolute;
       inset: 0;
-      z-index: 0;
+      z-index: 1;
       opacity: 0.05;
       background: url(../assets/imgs/bg-chat-light.png) repeat;
+    }
+
+    &_content {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      overflow-y: scroll;
+      z-index: 2;
     }
   }
 

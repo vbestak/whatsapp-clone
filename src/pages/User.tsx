@@ -33,7 +33,9 @@ function User() {
         </div>
       </header>
 
-      <div className="s-userChat__body"></div>
+      <div className="s-userChat__body">
+        <div className="s-userChat__body_content"></div>
+      </div>
 
       <div className="s-userChat__footer">
         <button>
