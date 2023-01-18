@@ -1,0 +1,50 @@
+.c-message {
+  $primary-bkg: #dbf8c6;
+  $secondary-bkg: white;
+
+  position: relative;
+  width: fit-content;
+  max-width: 95%;
+  padding: 6px 7px 8px 9px;
+  margin-bottom: 12px;
+
+  font-size: 0.85rem;
+
+  line-height: 1.5;
+  border-radius: 5px;
+  white-space: pre-line;
+
+  &--primary {
+    background: $primary-bkg;
+
+    &:before {
+      content: "";
+      position: absolute;
+      right: -8px;
+      width: 0;
+      height: 0;
+      top: 0;
+      border-top: 6px solid $primary-bkg;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 6px solid $primary-bkg;
+    }
+  }
+
+  &--secondary {
+    background: $secondary-bkg;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 0;
+      left: -8px;
+      border-top: 6px solid $secondary-bkg;
+      border-right: 6px solid $secondary-bkg;
+      border-bottom: 6px solid transparent;
+      border-left: 6px solid transparent;
+    }
+  }
+}
