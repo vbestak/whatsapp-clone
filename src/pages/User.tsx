@@ -4,6 +4,7 @@ import { ReactComponent as SearchIcon } from "../assets/icons/search.svg";
 import { ReactComponent as SmileyIcon } from "../assets/icons/smiley.svg";
 import { ReactComponent as AttachIcon } from "../assets/icons/attach.svg";
 import { ReactComponent as MicrophoneIcon } from "../assets/icons/microphone.svg";
+import Message from "../components/Message";
 
 function User() {
   return (
@@ -34,7 +35,22 @@ function User() {
       </header>
 
       <div className="s-userChat__body">
-        <div className="s-userChat__body_content"></div>
+        <div className="s-userChat__body_content">
+          <Message>
+            <p>
+              Instead of enameling salty condensed milk with ginger, use one
+              package hollandaise sauce and eight teaspoons cinnamon fine-mesh
+              strainer.
+            </p>
+          </Message>
+
+          <Message type="secondary">
+            <p>
+              Everyone loves the pepperiness of bagel paste rinsed with squeezed
+              radish sprouts.
+            </p>
+          </Message>
+        </div>
       </div>
 
       <div className="s-userChat__footer">
