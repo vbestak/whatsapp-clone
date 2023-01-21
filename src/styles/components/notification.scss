@@ -30,12 +30,33 @@
     }
   }
 
+  // notification in user message form
+  &--message {
+    border-radius: 5px;
+    font-size: 0.75rem;
+    text-align: center;
+    justify-content: center;
+    height: fit-content;
+
+    &.is-info {
+      width: fit-content;
+      background-color: lighten($info, 13%) !important;
+      padding: 7px 10px;
+      margin: 10px 0 14px;
+    }
+
+    &.is-warning {
+      background-color: lighten($warning, 23%) !important;
+      padding: 5px 10px;
+      margin-bottom: 8px;
+    }
+  }
+
   &.is-info {
     background-color: $info;
     color: black;
   }
 
-  // TODO change color of different notification types
   &.is-warning {
     background-color: $warning;
     color: black;

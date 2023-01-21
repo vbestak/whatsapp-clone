@@ -4,7 +4,9 @@ import { ReactComponent as SearchIcon } from "../assets/icons/search.svg";
 import { ReactComponent as SmileyIcon } from "../assets/icons/smiley.svg";
 import { ReactComponent as AttachIcon } from "../assets/icons/attach.svg";
 import { ReactComponent as MicrophoneIcon } from "../assets/icons/microphone.svg";
+import { ReactComponent as LockIcon } from "../assets/icons/lock.svg";
 import Message from "../components/Message";
+import MessageNotification from "../components/notification/MessageNotification";
 
 function User() {
   return (
@@ -36,6 +38,15 @@ function User() {
 
       <div className="s-userChat__body">
         <div className="s-userChat__body_content">
+          <MessageNotification>21/01/2023</MessageNotification>
+          <MessageNotification type="warning">
+            <p>
+              <LockIcon className="u-mr-1" />
+              Messages are end-to-end encrypted. No one outside of this chat,
+              not even WhatsApp, can read or listen to them. Click to learn
+              more.
+            </p>
+          </MessageNotification>
           <Message seen>
             <p>
               Instead of enameling salty condensed milk with ginger, use one

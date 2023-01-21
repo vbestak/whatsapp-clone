@@ -86,13 +86,32 @@
       padding: 20px 5%;
 
       .c-message {
+        max-width: 95%;
+
+        @media (min-width: $break-sm) {
+          max-width: 85%;
+        }
+
+        @media (min-width: $break-md) {
+          max-width: 75%;
+        }
+
+        @media (min-width: $break-lg) {
+          max-width: 65%;
+        }
+
         &--primary {
           align-self: flex-end;
-          justify-self: flex-end;
         }
 
         &--secondary {
           align-self: flex-start;
+        }
+      }
+
+      .c-notification {
+        &.is-info {
+          align-self: center;
         }
       }
     }
