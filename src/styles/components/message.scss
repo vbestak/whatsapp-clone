@@ -50,11 +50,28 @@
     right: 7px;
     bottom: 3px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: fit-content;
 
     color: #00000072;
     font-size: 0.7rem;
     font-weight: 500;
+
+    &_time {
+    }
+
+    &_status {
+      display: none;
+      align-content: center;
+      justify-content: center;
+    }
+
+    &_time + &_status {
+      margin-left: 3px;
+    }
   }
 
   &--primary {
@@ -71,6 +88,12 @@
       &__details {
         display: block;
         background: $primary-bkg;
+      }
+
+      &__info {
+        &_status {
+          display: inline-flex;
+        }
       }
     }
 

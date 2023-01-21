@@ -77,11 +77,24 @@
 
     &_content {
       position: relative;
+      display: flex;
+      flex-direction: column;
       height: 100%;
       width: 100%;
       overflow-y: scroll;
       z-index: 2;
       padding: 20px 5%;
+
+      .c-message {
+        &--primary {
+          align-self: flex-end;
+          justify-self: flex-end;
+        }
+
+        &--secondary {
+          align-self: flex-start;
+        }
+      }
     }
   }
 

@@ -36,7 +36,7 @@ function User() {
 
       <div className="s-userChat__body">
         <div className="s-userChat__body_content">
-          <Message>
+          <Message seen>
             <p>
               Instead of enameling salty condensed milk with ginger, use one
               package hollandaise sauce and eight teaspoons cinnamon fine-mesh
@@ -49,6 +49,11 @@ function User() {
               Everyone loves the pepperiness of bagel paste rinsed with squeezed
               radish sprouts.
             </p>
+          </Message>
+
+          <Message>
+            Tabasco soup is just not the same without flower and dark cored
+            pumpkin seeds.
           </Message>
         </div>
       </div>
