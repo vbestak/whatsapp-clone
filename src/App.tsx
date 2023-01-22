@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import BaseLayout from "./layout/BaseLayout";
 import ErrorPage from "./pages/ErrorPage";
 import User from "./pages/User";
+import { UsersProvider } from "./context/usersContext";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <UsersProvider>
+      <RouterProvider router={router} />
+    </UsersProvider>
+  );
 }
 
 export default App;

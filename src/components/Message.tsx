@@ -7,11 +7,13 @@ import { ReactComponent as NotSeenIcon } from "../assets/icons/notSeen.svg";
 type MessageType = "primary" | "secondary";
 
 interface MessageProps {
+  time: string;
   type?: MessageType;
   seen?: boolean;
 }
 
 function Message({
+  time,
   type = "primary",
   seen,
   children,
@@ -22,7 +24,7 @@ function Message({
 
       <span className="c-message__infoWrapper">
         <span className="c-message__info">
-          <span className="c-message__info_time">09:35</span>
+          <span className="c-message__info_time">{time}</span>
 
           <span className="c-message__info_status">
             {seen ? <SeenIcon color="#0DA9E5" /> : <NotSeenIcon />}

@@ -5,8 +5,12 @@ import { ReactComponent as ElipsisIcon } from "../assets/icons/elipsis.svg";
 import { ReactComponent as MessageIcon } from "../assets/icons/message.svg";
 import NewMessagesNotification from "./notification/sidebar/NewMessagesNotification";
 import ContactCard from "./ContactCard";
+import { useUsersContext } from "../context/usersContext";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
+  const { users } = useUsersContext();
+
   return (
     <aside className="c-sidebar">
       <header className="c-sidebar__header">
@@ -38,12 +42,11 @@ function Sidebar() {
       </div>
 
       <div className="c-sidebar__contactList">
-        <ContactCard pinned newMessages={3} />
-        <ContactCard newMessages={55} />
-        <ContactCard seen />
-        <ContactCard />
-        <ContactCard notSeen />
-        <ContactCard />
+        {users?.map((user) => (
+          <Link key={`${user.id}-${user.name}`} to={`/${user.id}`}>
+            <ContactCard user={user} />
+          </Link>
+        ))}
       </div>
     </aside>
   );

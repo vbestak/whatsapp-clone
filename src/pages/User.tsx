@@ -1,24 +1,43 @@
-import { getRandomImage } from "../util/img";
 import { ReactComponent as ElipsisIcon } from "../assets/icons/elipsis.svg";
 import { ReactComponent as SearchIcon } from "../assets/icons/search.svg";
 import { ReactComponent as SmileyIcon } from "../assets/icons/smiley.svg";
 import { ReactComponent as AttachIcon } from "../assets/icons/attach.svg";
 import { ReactComponent as MicrophoneIcon } from "../assets/icons/microphone.svg";
-import { ReactComponent as LockIcon } from "../assets/icons/lock.svg";
-import Message from "../components/Message";
-import MessageNotification from "../components/notification/MessageNotification";
+import { useMatch } from "react-router-dom";
+import { useUsersContext } from "../context/usersContext";
+import MessageList from "../components/MessageList";
+import { useEffect, useRef } from "react";
 
 function User() {
+  const match = useMatch("/:id");
+
+  const messageBodyRef = useRef<HTMLDivElement>(null);
+
+  const { getUserById, markMessagesAsRead } = useUsersContext();
+  const selectedUser = getUserById(match?.params.id as string);
+
+  useEffect(() => {
+    markMessagesAsRead(match?.params.id as string);
+  }, [match?.params.id]);
+
+  useEffect(() => {
+    if (!messageBodyRef.current) return;
+
+    messageBodyRef.current.scrollTop = messageBodyRef.current.scrollHeight;
+  });
+
+  if (!selectedUser) return <div />;
+
   return (
     <div className="s-userChat">
       <header className="s-userChat__header">
         <div className="s-userChat__header_avatar">
-          <img src={getRandomImage(40, 40)} />
+          <img src={selectedUser.profile_picture} />
         </div>
 
         <div className="s-userChat__header_userInfo">
           <h3 className="s-userChat__header_userName u-text-overflow">
-            Kahn Souphanousinphone
+            {selectedUser.name}
           </h3>
           <p className="s-userChat__header_userStatus u-text-overflow">
             online
@@ -37,35 +56,8 @@ function User() {
       </header>
 
       <div className="s-userChat__body">
-        <div className="s-userChat__body_content">
-          <MessageNotification>21/01/2023</MessageNotification>
-          <MessageNotification type="warning">
-            <p>
-              <LockIcon className="u-mr-1" />
-              Messages are end-to-end encrypted. No one outside of this chat,
-              not even WhatsApp, can read or listen to them. Click to learn
-              more.
-            </p>
-          </MessageNotification>
-          <Message seen>
-            <p>
-              Instead of enameling salty condensed milk with ginger, use one
-              package hollandaise sauce and eight teaspoons cinnamon fine-mesh
-              strainer.
-            </p>
-          </Message>
-
-          <Message type="secondary">
-            <p>
-              Everyone loves the pepperiness of bagel paste rinsed with squeezed
-              radish sprouts.
-            </p>
-          </Message>
-
-          <Message>
-            Tabasco soup is just not the same without flower and dark cored
-            pumpkin seeds.
-          </Message>
+        <div className="s-userChat__body_content" ref={messageBodyRef}>
+          <MessageList messages={selectedUser.messages} />
         </div>
       </div>
 
