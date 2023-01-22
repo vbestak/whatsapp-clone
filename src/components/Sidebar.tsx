@@ -15,7 +15,7 @@ function Sidebar() {
     <aside className="c-sidebar">
       <header className="c-sidebar__header">
         <div className="c-sidebar__header_avatar">
-          <img src={getRandomImage(50, 50)} />
+          <img src={getRandomImage(50, 50, 500)} />
         </div>
 
         <div className="c-sidebar__header_actions">
