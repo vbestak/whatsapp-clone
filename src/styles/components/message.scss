@@ -113,6 +113,20 @@
   &--secondary {
     background: $secondary-bkg;
 
+    &:hover {
+      .c-message__details {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    .c-message {
+      &__details {
+        display: block;
+        background: $secondary-bkg;
+      }
+    }
+
     &:before {
       content: "";
       position: absolute;
