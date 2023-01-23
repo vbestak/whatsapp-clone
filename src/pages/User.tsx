@@ -6,15 +6,17 @@ import { ReactComponent as MicrophoneIcon } from "../assets/icons/microphone.svg
 import { useMatch } from "react-router-dom";
 import { useUsersContext } from "../context/usersContext";
 import MessageList from "../components/MessageList";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function User() {
   const match = useMatch("/:id");
 
   const messageBodyRef = useRef<HTMLDivElement>(null);
 
-  const { getUserById, markMessagesAsRead } = useUsersContext();
+  const { getUserById, markMessagesAsRead, sendMessage } = useUsersContext();
   const selectedUser = getUserById(match?.params.id as string);
+
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     markMessagesAsRead(match?.params.id as string);
@@ -70,7 +72,19 @@ function User() {
           <AttachIcon width={22} height={22} />
         </button>
 
-        <input className="e-input" placeholder="Type a message" />
+        <input
+          className="e-input"
+          onKeyPress={(e) => {
+            if (e.key !== "Enter") return;
+            if (!selectedUser?.id) return;
+
+            sendMessage(selectedUser?.id, message);
+            setMessage("");
+          }}
+          onChange={(e) => setMessage(e.target.value)}
+          value={message}
+          placeholder="Type a message"
+        />
 
         <button>
           <MicrophoneIcon width={22} height={22} />

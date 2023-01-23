@@ -1,16 +1,18 @@
 import { createContext, PropsWithChildren, useContext, useState } from "react";
 import { users as defaultUsers } from "../data/users";
 import { IUser } from "../domain/user";
-import { STATUS } from "../domain/message";
+import { IMessage, STATUS } from "../domain/message";
 
 const UsersContext = createContext<{
   users: IUser[];
   getUserById: (id: string) => IUser | undefined;
   markMessagesAsRead: (id: string) => void;
+  sendMessage: (receiverId: number, content: string) => void;
 }>({
   users: [],
   getUserById: (id: string) => undefined,
   markMessagesAsRead: (id: string) => {},
+  sendMessage: (receiverId: number, content: string) => {},
 });
 
 const useUsersContext = () => useContext(UsersContext);
@@ -39,12 +41,33 @@ const UsersProvider = ({ children }: PropsWithChildren) => {
     setUsers(newUsers);
   }
 
+  function sendMessage(receiverId: number, content: string): void {
+    const message: IMessage = {
+      content,
+      sender: currentUser,
+      time: new Intl.DateTimeFormat("en-GB", {
+        timeStyle: "short",
+      }).format(Date.now()),
+      status: STATUS.DEFAULT,
+    };
+
+    setUsers((users) => {
+      const receiver = users.find((user) => user.id === receiverId);
+      if (!receiver) return users;
+
+      receiver.messages["TODAY"].push(message);
+      return [...users];
+    });
+  }
+
   function getUserById(userId: string): IUser | undefined {
     return users.find((user) => user.id.toString() === userId);
   }
 
   return (
-    <UsersContext.Provider value={{ users, getUserById, markMessagesAsRead }}>
+    <UsersContext.Provider
+      value={{ users, getUserById, markMessagesAsRead, sendMessage }}
+    >
       {children}
     </UsersContext.Provider>
   );
