@@ -63,7 +63,7 @@ function User() {
         </div>
       </div>
 
-      <div className="s-userChat__footer">
+      <footer className="s-userChat__footer">
         <button>
           <SmileyIcon width={22} height={22} />
         </button>
@@ -89,7 +89,7 @@ function User() {
         <button>
           <MicrophoneIcon width={22} height={22} />
         </button>
-      </div>
+      </footer>
     </div>
   );
 }
