@@ -11,7 +11,7 @@ function MessageList({ messages }: MessageListProps) {
   return (
     <div className="u-flex u-f-column">
       {Object.keys(messages).map((group, index) => (
-        <div className="u-flex u-f-column" key={`${group}-${index}`}>
+        <div className="u-flex--base u-f-column" key={`${group}-${index}`}>
           <MessageNotification>{group}</MessageNotification>
 
           {index === 0 && (
