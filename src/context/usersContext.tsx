@@ -8,18 +8,21 @@ const UsersContext = createContext<{
   getUserById: (id: string) => IUser | undefined;
   markMessagesAsRead: (id: string) => void;
   sendMessage: (receiverId: number, content: string) => void;
+  setSearchTerm: (term: string) => void;
 }>({
   users: [],
   getUserById: (id: string) => undefined,
   markMessagesAsRead: (id: string) => {},
   sendMessage: (receiverId: number, content: string) => {},
+  setSearchTerm: (term: string) => {},
 });
 
 const useUsersContext = () => useContext(UsersContext);
 
 const UsersProvider = ({ children }: PropsWithChildren) => {
-  const [users, setUsers] = useState(defaultUsers);
   const currentUser = null;
+  const [users, setUsers] = useState(defaultUsers);
+  const [searchTerm, setSearchTerm] = useState("");
 
   function markMessagesAsRead(userId: string): void {
     const userIndex = users.findIndex((user) => user.id.toString() === userId);
@@ -64,9 +67,23 @@ const UsersProvider = ({ children }: PropsWithChildren) => {
     return users.find((user) => user.id.toString() === userId);
   }
 
+  function getFilteredUsers(): IUser[] {
+    return users.filter((user) => {
+      return `${user.name}${user.phone_number}`
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase());
+    });
+  }
+
   return (
     <UsersContext.Provider
-      value={{ users, getUserById, markMessagesAsRead, sendMessage }}
+      value={{
+        users: getFilteredUsers(),
+        getUserById,
+        markMessagesAsRead,
+        sendMessage,
+        setSearchTerm,
+      }}
     >
       {children}
     </UsersContext.Provider>

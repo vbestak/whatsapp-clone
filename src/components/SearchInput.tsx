@@ -1,12 +1,18 @@
 import { ReactComponent as SearchIcon } from "../assets/icons/search.svg";
+import { ChangeEventHandler } from "react";
 
-function SearchInput() {
+interface SearchInputProps {
+  placeholder?: string;
+  value?: string;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
+}
+function SearchInput({ placeholder, value, onChange }: SearchInputProps) {
   return (
     <div className="c-searchInput">
       <button className="c-searchInput__searchIcon">
         <SearchIcon />
       </button>
-      <input placeholder="Search or start a new chat" />
+      <input value={value} placeholder={placeholder} onChange={onChange} />
     </div>
   );
 }

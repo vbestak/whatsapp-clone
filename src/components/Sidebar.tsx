@@ -9,7 +9,7 @@ import { useUsersContext } from "../context/usersContext";
 import { Link } from "react-router-dom";
 
 function Sidebar() {
-  const { users } = useUsersContext();
+  const { users, setSearchTerm } = useUsersContext();
 
   return (
     <aside className="c-sidebar">
@@ -38,7 +38,10 @@ function Sidebar() {
       </div>
 
       <div className="c-sidebar__searchContainer">
-        <SearchInput />
+        <SearchInput
+          placeholder="Search or start a new chat"
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </div>
 
       <div className="c-sidebar__contactList">
