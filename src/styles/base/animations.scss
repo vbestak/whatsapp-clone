@@ -1,0 +1,22 @@
+@keyframes scaleIn {
+  from {
+    transform-origin: center;
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform-origin: center;
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+@keyframes scaleOut {
+  from {
+    transform-origin: center;
+    transform: scale(0);
+  }
+  to {
+    transform-origin: center;
+    transform: scale(1);
+  }
+}
