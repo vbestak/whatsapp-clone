@@ -21,7 +21,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -33,7 +33,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -47,7 +47,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -59,7 +59,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -67,7 +67,7 @@ export const users: IUser[] = [
       TODAY: [
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:10",
           status: STATUS.READ,
         },
@@ -85,13 +85,13 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:12",
           status: STATUS.READ,
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:13",
           status: STATUS.DEFAULT,
         },
@@ -126,7 +126,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -138,7 +138,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -152,7 +152,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -164,7 +164,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -178,7 +178,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -207,7 +207,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -219,7 +219,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -233,7 +233,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -245,7 +245,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -259,7 +259,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -277,13 +277,13 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:13",
           status: STATUS.DEFAULT,
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.DEFAULT,
         },
@@ -307,7 +307,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -319,7 +319,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -333,7 +333,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -345,7 +345,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -359,7 +359,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -371,7 +371,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -406,7 +406,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -418,7 +418,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -432,7 +432,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -444,7 +444,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -458,7 +458,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -470,7 +470,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -494,7 +494,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -506,7 +506,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -520,7 +520,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -532,7 +532,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -546,7 +546,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -558,7 +558,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -593,7 +593,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -605,7 +605,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -619,7 +619,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -631,7 +631,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -645,7 +645,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -657,7 +657,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -680,7 +680,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -692,7 +692,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -706,7 +706,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -718,7 +718,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },
@@ -732,7 +732,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "08:15",
           status: STATUS.READ,
         },
@@ -744,7 +744,7 @@ export const users: IUser[] = [
         },
         {
           content: getRandomSentence(),
-          sender: null,
+          sender: 0,
           time: "09:15",
           status: STATUS.READ,
         },

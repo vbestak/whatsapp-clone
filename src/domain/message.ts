@@ -1,3 +1,5 @@
+import { IUser } from "./user";
+
 export enum STATUS {
   DEFAULT,
   READ,
@@ -5,7 +7,7 @@ export enum STATUS {
 
 export interface IMessage {
   content: string;
-  sender: number | null;
+  sender: IUser["id"];
   time: string;
   status: STATUS;
 }

@@ -5,46 +5,52 @@ import { IMessage, STATUS } from "../domain/message";
 
 const UsersContext = createContext<{
   users: IUser[];
-  getUserById: (id: string) => IUser | undefined;
-  markMessagesAsRead: (id: string) => void;
-  sendMessage: (receiverId: number, content: string) => void;
+  getUserById: (id: IUser["id"]) => IUser | undefined;
+  markMessagesAsRead: (id: IUser["id"]) => void;
+  sendMessage: (receiverId: IUser["id"], content: IMessage["content"]) => void;
   setSearchTerm: (term: string) => void;
 }>({
   users: [],
-  getUserById: (id: string) => undefined,
-  markMessagesAsRead: (id: string) => {},
-  sendMessage: (receiverId: number, content: string) => {},
-  setSearchTerm: (term: string) => {},
+  getUserById(id: IUser["id"]): IUser | undefined {
+    return undefined;
+  },
+  markMessagesAsRead(id: IUser["id"]): void {},
+  sendMessage(receiverId: IUser["id"], content: IMessage["content"]): void {},
+  setSearchTerm(term: string): void {},
 });
 
 const useUsersContext = () => useContext(UsersContext);
 
 const UsersProvider = ({ children }: PropsWithChildren) => {
-  const currentUser = null;
+  const currentUser: IUser["id"] = 0;
+
   const [users, setUsers] = useState(defaultUsers);
   const [searchTerm, setSearchTerm] = useState("");
 
-  function markMessagesAsRead(userId: string): void {
-    const userIndex = users.findIndex((user) => user.id.toString() === userId);
+  function markMessagesAsRead(userId: IUser["id"]): void {
+    const userIndex = users.findIndex((user) => user.id === userId);
 
     if (userIndex < 0) return;
 
-    const newUser = users[userIndex];
-    delete newUser.unread;
+    const updatedUser = users[userIndex];
+    delete updatedUser.unread;
 
-    Object.values(newUser.messages).forEach((group) => {
+    Object.values(updatedUser.messages).forEach((group) => {
       group.forEach((message) => {
         if (message.sender !== currentUser) message.status = STATUS.READ;
       });
     });
 
-    const newUsers = [...users];
-    newUsers[userIndex] = newUser;
+    const updatedUsers = [...users];
+    updatedUsers[userIndex] = updatedUser;
 
-    setUsers(newUsers);
+    setUsers(updatedUsers);
   }
 
-  function sendMessage(receiverId: number, content: string): void {
+  function sendMessage(
+    receiverId: IUser["id"],
+    content: IMessage["content"]
+  ): void {
     const message: IMessage = {
       content,
       sender: currentUser,
@@ -63,8 +69,8 @@ const UsersProvider = ({ children }: PropsWithChildren) => {
     });
   }
 
-  function getUserById(userId: string): IUser | undefined {
-    return users.find((user) => user.id.toString() === userId);
+  function getUserById(userId: IUser["id"]): IUser | undefined {
+    return users.find((user) => user.id === userId);
   }
 
   function getFilteredUsers(): IUser[] {

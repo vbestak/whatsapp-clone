@@ -12,7 +12,7 @@ interface DropdownProps {
   label: JSX.Element | string;
 }
 
-function Dropdown(props: PropsWithChildren<DropdownProps>): JSX.Element {
+function Dropdown(props: PropsWithChildren<DropdownProps>) {
   const { label, children } = props;
 
   const [isOpen, setIsOpen] = useState(false);

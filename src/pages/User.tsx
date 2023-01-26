@@ -6,21 +6,25 @@ import { ReactComponent as MicrophoneIcon } from "../assets/icons/microphone.svg
 import { useMatch } from "react-router-dom";
 import { useUsersContext } from "../context/usersContext";
 import MessageList from "../components/MessageList";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 function User() {
-  const match = useMatch("/:id");
-
   const messageBodyRef = useRef<HTMLDivElement>(null);
 
+  const match = useMatch("/:id");
+  const pageUserId = useMemo(
+    () => Number(match?.params.id),
+    [match?.params.id]
+  );
+
   const { getUserById, markMessagesAsRead, sendMessage } = useUsersContext();
-  const selectedUser = getUserById(match?.params.id as string);
+  const selectedUser = getUserById(pageUserId);
 
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    markMessagesAsRead(match?.params.id as string);
-  }, [match?.params.id]);
+    markMessagesAsRead(pageUserId);
+  }, [pageUserId]);
 
   useEffect(() => {
     if (!messageBodyRef.current) return;
@@ -76,9 +80,8 @@ function User() {
           className="e-input"
           onKeyPress={(e) => {
             if (e.key !== "Enter") return;
-            if (!selectedUser?.id) return;
 
-            sendMessage(selectedUser?.id, message);
+            sendMessage(selectedUser.id, message);
             setMessage("");
           }}
           onChange={(e) => setMessage(e.target.value)}
