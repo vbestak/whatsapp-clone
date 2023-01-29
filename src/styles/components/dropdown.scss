@@ -31,6 +31,18 @@
       0px 4px 8px rgba(96, 97, 112, 0.16);
   }
 
+  &--right {
+    .c-dropdown__content {
+      right: 0;
+    }
+  }
+
+  &--left {
+    .c-dropdown__content {
+      left: 0;
+    }
+  }
+
   // Closing animation
   &.is-closing {
     > .c-dropdown__content {

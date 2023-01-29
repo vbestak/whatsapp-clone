@@ -7,13 +7,16 @@ import React, {
 } from "react";
 import { useKeyPress } from "../hooks/useKeyPress";
 import { useOnClickOutside } from "../hooks/useOnClickOutside";
+import { Alignment } from "../domain/alignment";
+import { getModifierClass } from "../util/css";
 
 interface DropdownProps {
   label: JSX.Element | string;
+  align?: Alignment;
 }
 
 function Dropdown(props: PropsWithChildren<DropdownProps>) {
-  const { label, children } = props;
+  const { label, children, align = "left" } = props;
 
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
@@ -48,7 +51,7 @@ function Dropdown(props: PropsWithChildren<DropdownProps>) {
   return (
     <div
       ref={dropdownRef}
-      className={`c-dropdown 
+      className={`c-dropdown ${getModifierClass("c-dropdown", [align])}
         ${isOpen ? "is-open" : ""} 
         ${isClosing ? "is-closing" : ""}
       `}
