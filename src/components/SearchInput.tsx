@@ -9,7 +9,7 @@ interface SearchInputProps {
 function SearchInput({ placeholder, value, onChange }: SearchInputProps) {
   return (
     <div className="c-searchInput">
-      <button className="c-searchInput__searchIcon">
+      <button className="c-searchInput__searchIcon" aria-label="Search submit">
         <SearchIcon />
       </button>
       <input value={value} placeholder={placeholder} onChange={onChange} />

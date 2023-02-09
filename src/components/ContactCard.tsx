@@ -4,6 +4,7 @@ import { ReactComponent as SeenIcon } from "../assets/icons/seen.svg";
 import { ReactComponent as NotSeenIcon } from "../assets/icons/notSeen.svg";
 import { STATUS } from "../domain/message";
 import { IUser } from "../domain/user";
+import { CURRENT_USER_ID } from "../context/usersContext";
 
 interface ContactCardProps {
   user: IUser;
@@ -25,9 +26,9 @@ function ContactCard({ user }: ContactCardProps) {
   }
 
   function getSeenIcon(): JSX.Element | undefined {
-    let icon;
+    let icon: JSX.Element | undefined;
 
-    if (lastMessage.sender !== null) return;
+    if (lastMessage.sender !== CURRENT_USER_ID) return;
 
     switch (lastMessage.status) {
       case STATUS.DEFAULT:
@@ -46,7 +47,7 @@ function ContactCard({ user }: ContactCardProps) {
   return (
     <div className="c-contact">
       <div className="c-contact__avatar u-shrink:0">
-        <img src={profile_picture} />
+        <img src={profile_picture} alt="Contact avatar" />
       </div>
 
       <div className="c-contact__data">

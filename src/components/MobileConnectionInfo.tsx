@@ -4,7 +4,7 @@ function MobileConnectionInfo() {
   return (
     <div className="s-mobileConnectionInfo">
       <div className="s-mobileConnectionInfo__img">
-        <img src={MobileConnectionImg} />
+        <img src={MobileConnectionImg} alt="Connect to mobile info" />
       </div>
 
       <h3 className="s-mobileConnectionInfo__title">

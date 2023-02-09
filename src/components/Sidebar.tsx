@@ -15,19 +15,19 @@ function Sidebar() {
     <aside className="c-sidebar">
       <header className="c-sidebar__header">
         <div className="c-sidebar__header_avatar">
-          <img src={getRandomImage(50, 50, 500)} />
+          <img src={getRandomImage(50, 50, 500)} alt="User avatar" />
         </div>
 
         <div className="c-sidebar__header_actions">
-          <button>
+          <button aria-label="User status">
             <StatusIcon color="#919191" />
           </button>
 
-          <button>
+          <button aria-label="User messages">
             <MessageIcon color="#919191" />
           </button>
 
-          <button>
+          <button aria-label="User options">
             <ElipsisIcon color="#919191" />
           </button>
         </div>

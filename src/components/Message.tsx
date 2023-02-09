@@ -32,7 +32,7 @@ function Message({
         </span>
       </span>
 
-      <button className="c-message__details">
+      <button className="c-message__details" aria-label="Message details">
         <ArrowDownIcon />
       </button>
     </div>

@@ -38,7 +38,7 @@ function User() {
     <div className="s-userChat">
       <header className="s-userChat__header">
         <div className="s-userChat__header_avatar">
-          <img src={selectedUser.profile_picture} />
+          <img src={selectedUser.profile_picture} alt="Contact avatar" />
         </div>
 
         <div className="s-userChat__header_userInfo">
@@ -51,11 +51,11 @@ function User() {
         </div>
 
         <div className="s-userChat__header_actions">
-          <button>
+          <button aria-label="Search messages">
             <SearchIcon width={30} height={30} color="#919191FF" />
           </button>
 
-          <button>
+          <button aria-label="Contact info">
             <ElipsisIcon color="#919191FF" />
           </button>
         </div>
@@ -68,11 +68,11 @@ function User() {
       </div>
 
       <footer className="s-userChat__footer">
-        <button>
+        <button aria-label="Emotes">
           <SmileyIcon width={22} height={22} />
         </button>
 
-        <button>
+        <button aria-label="Attach files">
           <AttachIcon width={22} height={22} />
         </button>
 
@@ -89,7 +89,7 @@ function User() {
           placeholder="Type a message"
         />
 
-        <button>
+        <button aria-label="Voice message">
           <MicrophoneIcon width={22} height={22} />
         </button>
       </footer>

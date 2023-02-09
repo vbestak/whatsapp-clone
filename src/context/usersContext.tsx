@@ -20,10 +20,9 @@ const UsersContext = createContext<{
 });
 
 const useUsersContext = () => useContext(UsersContext);
+export const CURRENT_USER_ID: IUser["id"] = 0 as const;
 
 const UsersProvider = ({ children }: PropsWithChildren) => {
-  const currentUser: IUser["id"] = 0;
-
   const [users, setUsers] = useState(defaultUsers);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -37,7 +36,7 @@ const UsersProvider = ({ children }: PropsWithChildren) => {
 
     Object.values(updatedUser.messages).forEach((group) => {
       group.forEach((message) => {
-        if (message.sender !== currentUser) message.status = STATUS.READ;
+        if (message.sender !== CURRENT_USER_ID) message.status = STATUS.READ;
       });
     });
 
@@ -53,7 +52,7 @@ const UsersProvider = ({ children }: PropsWithChildren) => {
   ): void {
     const message: IMessage = {
       content,
-      sender: currentUser,
+      sender: CURRENT_USER_ID,
       time: new Intl.DateTimeFormat("en-GB", {
         timeStyle: "short",
       }).format(Date.now()),
